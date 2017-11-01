@@ -1,0 +1,49 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.novoda:bintray-release:0.3.4'
+    }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'bintray-release'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "26.0.1"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0.0"
+    }
+}
+
+dependencies {
+}
+
+android {
+    lintOptions {
+        abortOnError false
+    }
+}
+
+tasks.withType(Javadoc) {
+    options {
+        encoding "UTF-8"
+        charSet 'UTF-8'
+        links "http://docs.oracle.com/javase/7/docs/api"
+    }
+}
+
+publish {
+    userOrg = 'yangwencan2002'
+    groupId = 'com.vincan'
+    artifactId = 'circularrevealcompat'
+    publishVersion = android.defaultConfig.versionName
+    desc = 'Android 5.0+ API ViewAnimationUtils.createCircularReveal compatible for 4.0+.'
+    website = 'https://github.com/yangwencan2002/CircularRevealCompat'
+}

@@ -1,0 +1,18 @@
+<com.vincan.circularrevealcompat.CircularRevealCompatLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/reveal_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/background_light">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Second activity. \n Touch me!" />
+    </RelativeLayout>
+</com.vincan.circularrevealcompat.CircularRevealCompatLayout>
