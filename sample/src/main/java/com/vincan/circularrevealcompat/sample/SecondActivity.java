@@ -44,18 +44,25 @@ public class SecondActivity extends AppCompatActivity {
         });
     }
 
-    private void revealActivity(View revealView, int centerX, int centerY) {
+
+    private void revealActivity(View revealView, int startCenterX, int startCenterY) {
+        int endCenterX = revealView.getWidth() / 2;
+        int endCenterY = revealView.getHeight() / 2;
+        float startRadius = 0;
         float finalRadius = Math.max(revealView.getWidth(), revealView.getHeight()) * 1.1f;
-        Animator circularReveal = ViewAnimationCompatUtils.createCircularReveal(revealView, centerX, centerY, 0, finalRadius);
+        Animator circularReveal = ViewAnimationCompatUtils.createCircularReveal(revealView, startCenterX, startCenterY, startRadius, endCenterX, endCenterY, finalRadius);
         circularReveal.setDuration(500);
         circularReveal.setInterpolator(new AccelerateInterpolator());
         revealView.setVisibility(View.VISIBLE);
         circularReveal.start();
     }
 
-    private void unRevealActivity(final View revealView, int centerX, int centerY) {
-        float finalRadius = Math.max(revealView.getWidth(), revealView.getHeight()) * 1.1f;
-        Animator circularReveal = ViewAnimationCompatUtils.createCircularReveal(revealView, centerX, centerY, finalRadius, 0);
+    private void unRevealActivity(final View revealView, int endCenterX, int endCenterY) {
+        int startCenterX = revealView.getWidth() / 2;
+        int startCenterY = revealView.getHeight() / 2;
+        float startRadius = Math.max(revealView.getWidth(), revealView.getHeight()) * 1.1f;
+        float finalRadius = 0;
+        Animator circularReveal = ViewAnimationCompatUtils.createCircularReveal(revealView, startCenterX, startCenterY, startRadius, endCenterX, endCenterY, finalRadius);
         circularReveal.setDuration(500);
         circularReveal.addListener(new AnimatorListenerAdapter() {
             @Override

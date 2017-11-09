@@ -1,6 +1,9 @@
 CircularRevealCompat
 ====================
-[![Build Status](https://api.travis-ci.org/yangwencan2002/CircularRevealCompat.svg?branch=master)](https://travis-ci.org/yangwencan2002/CircularRevealCompat/) [ ![Download](https://api.bintray.com/packages/yangwencan2002/maven/CircularRevealCompat/images/download.svg) ](https://bintray.com/yangwencan2002/maven/CircularRevealCompat/_latestVersion)[![License](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+[![Build Status](https://api.travis-ci.org/yangwencan2002/CircularRevealCompat.svg?branch=master)](https://travis-ci.org/yangwencan2002/CircularRevealCompat/)
+[![Download](https://api.bintray.com/packages/yangwencan2002/maven/CircularRevealCompat/images/download.svg)](https://bintray.com/yangwencan2002/maven/CircularRevealCompat/_latestVersion)
+[![License](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+[![QQ Approved](https://img.shields.io/badge/QQ_Approved-1.0.0-red.svg)]
 
 Introduction
 ------
@@ -39,15 +42,18 @@ Java
     View touchView = ...;
     View revealView = findViewById(R.id.reveal_view);
 
-    // get the center point for the clipping circle
-    int centerX = (int) (touchView.getX() + touchView.getWidth() / 2);
-    int centerY = (int) (touchView.getY() + touchView.getHeight() / 2);
+    //get the center point for the clipping circle
+    int startCenterX = (int) (touchView.getX() + touchView.getWidth() / 2);
+    int startCenterY = (int) (touchView.getY() + touchView.getHeight() / 2);
+    int endCenterX = revealView.getWidth() / 2;
+    int endCenterY = revealView.getHeight() / 2;
 
-    // get the final radius for the clipping circle
+    //get the radius for the clipping circle
+    float startRadius = 0;
     float finalRadius = Math.max(revealView.getWidth(), revealView.getHeight()) * 1.1f;
 
     Animator animator =
-            ViewAnimationCompatUtils.createCircularReveal(revealView, centerX, centerY, 0, finalRadius);
+            ViewAnimationCompatUtils.createCircularReveal(revealView, startCenterX, startCenterY, startRadius, endCenterX, endCenterY, finalRadius);
     animator.setDuration(500);
     animator.start();
 
@@ -57,11 +63,17 @@ Sample
 ------
 See `sample` project.
 
-ChangeLog
----------
+Approved app
+------
+#### QQ
+![QQ](https://raw.github.com/yangwencan2002/CircularRevealCompat/master/screencap_QQ.gif)
+
+Release notes
+------
 [here](https://github.com/yangwencan2002/CircularRevealCompat/releases)
 
-## Where released?
+Where released
+------
 [bintray.com](https://bintray.com/yangwencan2002/maven/CircularRevealCompat)
 
 License
