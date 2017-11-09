@@ -3,7 +3,7 @@ CircularRevealCompat
 [![Build Status](https://api.travis-ci.org/yangwencan2002/CircularRevealCompat.svg?branch=master)](https://travis-ci.org/yangwencan2002/CircularRevealCompat/)
 [![Download](https://api.bintray.com/packages/yangwencan2002/maven/CircularRevealCompat/images/download.svg)](https://bintray.com/yangwencan2002/maven/CircularRevealCompat/_latestVersion)
 [![License](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
-[![QQ Approved](https://img.shields.io/badge/QQ_Approved-1.0.0-red.svg)]
+[![QQ Approved](https://img.shields.io/badge/QQ_Approved-1.0.0-red.svg)](https://github.com/yangwencan2002/CircularRevealCompat)
 
 Introduction
 ------
